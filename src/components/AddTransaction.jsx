@@ -4,29 +4,32 @@ function AddTransaction() {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
 
-  function handleAddText(e) {
-    setText(e.target.value);
-  }
-
-  function handleAddAmount(e) {
-    e.preventDefault();
-    setAmount(e.target.value);
-  }
-
   return (
     <>
-      <div>Text</div>
-      <input
-        className="add-transaction"
-        value={text}
-        onChange={handleAddText}
-      />
-      <div>Amount</div>
-      <input
-        className="add-transaction"
-        value={amount}
-        onChange={handleAddAmount}
-      />
+      <div className="form-control">
+        <label htmlFor="text">Text</label>
+        <input
+          type="text"
+          className="add-transaction"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Enter text..."
+        />
+      </div>
+      <div className="form-control">
+        <label htmlFor="amount">
+          Amount <br />
+          (negative - expense, positive - income)
+        </label>
+        <input
+          type="number"
+          className="add-transaction"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter amount..."
+        />
+      </div>
+      <button className="add-btn">Add Transaction</button>
     </>
   );
 }

@@ -25,8 +25,19 @@ body {
   width: 400px;
 }
 
+h2,
+h3,
+h4 {
+  margin: 0 0 8px 0;
+}
+
 h2 {
   text-align: center;
+}
+
+h3 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #959595;
 }
 
 input {
@@ -35,4 +46,86 @@ input {
   padding: 15px;
   font-size: 18px;
   margin-top: 5px;
+}
+
+.delete-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.expenses-container {
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.expenses-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.expenses-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #ffffff;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 10px;
+  position: relative;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
 }
