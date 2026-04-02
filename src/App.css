@@ -129,3 +129,17 @@ input {
 .list li:hover .delete-btn {
   opacity: 1;
 }
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.income {
+  color: #2ecc71;
+}
+
+.money.expense {
+  color: #c0392b;
+}
